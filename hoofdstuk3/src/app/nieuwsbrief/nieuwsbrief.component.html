@@ -1,0 +1,9 @@
+<form>
+    <label>
+        Schrijf je in voor onze nieuwsbrief...
+        <input name="email" [(ngModel)]="email" type="text" width="100%"/>
+    </label>
+    <input (click)="submitEmail()" type="submit" />
+</form>
+
+<p [hidden]="submitted === false">Je bent ingeschreven voor de nieuwsbrief met e-mail: {{ email }}</p>
