@@ -1,0 +1,5 @@
+<div (click)="selectPokemon()" [ngClass]="{'green': pokemon.type === 'grass', 'red': pokemon.type === 'fire', 'blue': pokemon.type === 'water', 'golden-border': pokemon.isSelected}">
+    <h3>{{ pokemon.id }}. {{ pokemon.name }}</h3>
+    <h4>{{ pokemon.type | titlecase }}</h4>
+    <img [src]="pokemon.icon" />
+</div>

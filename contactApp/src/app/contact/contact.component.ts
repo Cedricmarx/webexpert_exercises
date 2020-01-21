@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Contact } from '../models/contact.model';
 
 @Component({
   selector: 'app-contact',
@@ -9,6 +10,10 @@ export class ContactComponent implements OnInit {
   name: string;
   email: string;
   phone: string;
+  isFavorite: boolean = false;
+  
+  @Input() contact: Contact;
+  @Output() onSubmit: EventEmitter<Contact> = new EventEmitter();
 
   constructor() { }
 
@@ -16,6 +21,10 @@ export class ContactComponent implements OnInit {
     this.name = 'John Doe';
     this.email = 'john.doe@gmail.com';
     this.phone = '011642839';
+    this.isFavorite = false;
   }
 
+  submit() {
+    this.onSubmit.emit(this.contact);
+  }
 }

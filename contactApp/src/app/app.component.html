@@ -2,7 +2,5 @@
   <h1>Contacts</h1>
 </header>
 <main>
-  <app-contact></app-contact>
-  <app-contact></app-contact>
-  <app-contact></app-contact>
+  <app-contact *ngFor="let contact of contactList" [contact]="contact" (onSubmit)="handleData($event)"></app-contact>
 </main>
