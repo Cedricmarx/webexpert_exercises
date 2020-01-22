@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Contact } from '../models/contact.model';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,13 +14,20 @@ export class ContactComponent implements OnInit {
   isFavorite: boolean = false;
   
   @Input() contact: Contact;
+  @Input() index: number;
+  @Output() onUpdate: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.name = 'John Doe';
     this.email = 'john.doe@gmail.com';
     this.phone = '011642839';
     this.isFavorite = false;
+  }
+
+  toggleFavorite(index: number): void {
+    this.contactService.toggleFavorite(index);
+    this.onUpdate.emit();
   }
 }
