@@ -13,7 +13,6 @@ export class ContactComponent implements OnInit {
   isFavorite: boolean = false;
   
   @Input() contact: Contact;
-  @Output() onSubmit: EventEmitter<Contact> = new EventEmitter();
 
   constructor() { }
 
@@ -22,9 +21,5 @@ export class ContactComponent implements OnInit {
     this.email = 'john.doe@gmail.com';
     this.phone = '011642839';
     this.isFavorite = false;
-  }
-
-  submit() {
-    this.onSubmit.emit(this.contact);
   }
 }

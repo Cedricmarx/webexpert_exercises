@@ -1,9 +1,13 @@
-.favorite{
-	color: #900;
-}
-
 .avatar {
     float: left;
     margin-right: 2rem;
     width: 50px;
+}
+
+.error {
+    color: red;
+}
+
+.favorite {
+    color: red;
 }

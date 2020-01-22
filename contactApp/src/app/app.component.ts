@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     this.myContact = new Contact("Cedric", "marxcedric@hotmail.com", "+32496948481", true, 'assets/avatar.jpg');
   }
 
-  handleData(event: Contact){
-    console.log('Recieved data!', event);
+  createContact(event: Contact) {
+    this.contactList.push(event);
   }
 }
