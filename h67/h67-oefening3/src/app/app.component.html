@@ -1,0 +1,2 @@
+<app-customer-form (formSubmitted)="handleForm($event)"></app-customer-form>
+<app-customer *ngFor="let customer of customerList" [customer]="customer"></app-customer>
