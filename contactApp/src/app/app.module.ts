@@ -7,17 +7,21 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactService } from './services/contact.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

@@ -3,3 +3,19 @@
     margin:0;
     padding:0;
 }
+
+.green {
+    background: green;
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: lightblue;
+}
+
+.golden-border {
+    border: 1px solid gold;
+}

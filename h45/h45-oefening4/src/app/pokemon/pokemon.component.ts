@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -9,19 +10,14 @@ import { Pokemon } from '../models/pokemon.model';
 export class PokemonComponent implements OnInit {
   @Input() pokemon: Pokemon;
   @Input() pokemons: Pokemon[];
-  @Output() pokemonSelectionChanged: EventEmitter<Pokemon> = new EventEmitter();
+  @Output() pokemonSelectionChanged: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private service: PokemonService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  selectPokemon() {
-    this.pokemons.forEach(pokemon => {
-      pokemon.isSelected = false;
-    });
-    
-    this.pokemon.isSelected = true;
+  selectPokemon(): void {
+    this.service.selectPokemon(this.pokemon.id);
     this.pokemonSelectionChanged.emit(this.pokemon);
   }
 }

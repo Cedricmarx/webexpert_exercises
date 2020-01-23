@@ -1,0 +1,38 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+div {
+    margin: 0 auto;
+    width: 20%;
+}
+
+form {
+    display: inline-block;
+}
+
+input, select {
+    margin: 10px 0;
+}
+
+input {
+    width: 100px;
+}
+
+select {
+    width: 104px;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+}
+
+input[type="submit"] {
+    width: 100%;
+}
+
+.error {
+    color: red;
+}

@@ -1,0 +1,26 @@
+<h1>Auto's</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Merk</th>
+    <th>Type</th>
+    <th>Bouwjaar</th>
+    <th>Prijs</th>
+    <th>Stock</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let car of cars">
+    <td>{{ car.id }}</td>
+    <td>{{ car.merk }}</td>
+    <td>{{ car.type }}</td>
+    <td>{{ car.bouwjaar }}</td>
+    <td>{{ '€' + car.prijs }}</td>
+    <td>{{ car.stock }}</td>
+    <td><button (click)="sellCar(car)">Verkoop</button></td>
+  </tr>
+</table>
+
+<app-car-form (formSubmitted)="handleReceivedCar($event)"></app-car-form>
+
+  

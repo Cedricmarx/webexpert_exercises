@@ -1,0 +1,37 @@
+<h1>Afspraak maken</h1>
+
+<form #form="ngForm" (ngSubmit)="submit(form)">
+    <label for="description">Omschrijving:</label>
+    <input name="description" type="text" [(ngModel)]="description" required minlength="3" maxlength="25">
+    <p *ngIf="form.controls.description?.errors?.minlength" class="error">Minimum 3 characters.</p>
+    <p *ngIf="form.controls.description?.errors?.maxlength" class="error">Maximum 25 characters.</p>
+    <p *ngIf="form.controls.description?.errors?.required" class="error">Required.</p>
+    <br />
+
+    <label for="date">Datum:</label>
+    <input name="date" type="date" [(ngModel)]="date" required>
+    <p *ngIf="form.controls.date?.errors?.required" class="error">Required.</p>
+    <br />
+
+    <label>Dagdeel:</label>
+    <input name="morning" type="checkbox" [(ngModel)]="morning" [value]="Voormiddag">
+    <label for="morning">Voormiddag</label>
+    <input name="afternoon" type="checkbox" [(ngModel)]="afternoon" [value]="Namiddag">
+    <label for="afternoon">Namiddag</label>
+    <br />
+
+    <label for="appointmentType">Type afspraak:</label>
+    <select name="appointmentType" [(ngModel)]="appointmentType">
+        <option *ngFor="let appointmentType of appointmentTypes">{{ appointmentType }}</option>
+    </select>
+    <br />
+
+    <label for="reminder">Herinnering:</label>
+    <input name="reminder" type="radio" [(ngModel)]="reminder" value="Ja" id="r1">
+    <label for="r1">Ja</label>
+    <input name="reminder" type="radio" [(ngModel)]="reminder" value="Nee" id="r2">
+    <label for="r2">Nee</label>
+    <br />
+
+    <input id="submit" type="submit" value="Aanmaken" [disabled]="form.invalid">
+</form>

@@ -9,22 +9,31 @@ import { ContactService } from './services/contact.service';
 })
 export class AppComponent implements OnInit {
   title = 'contactApp';
-  myContact: Contact;
   contactList: Contact[];
+  onlyFavorites: boolean;
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService) { }
 
   ngOnInit(): void {
-    this.refreshContactList();
-    this.myContact = new Contact("Cedric", "marxcedric@hotmail.com", "+32496948481", true, 'assets/avatar.jpg');
+    this.fetchContactList(this.onlyFavorites);
   }
 
   createContact(event: Contact) {
-    this.contactService.addContact(event);
-    this.refreshContactList();
+    this.contactService.addContact(event).subscribe(() => this.fetchContactList(this.onlyFavorites));
   }
 
-  refreshContactList() {
-    this.contactList = this.contactService.getContactList();
+  fetchContactList(onlyFav: boolean): void {
+    this.contactService.getContactList(onlyFav).subscribe(data => {
+      this.contactList = data;
+    });
+  }
+
+  handleUpdate(): void {
+    this.fetchContactList(this.onlyFavorites);
+  }
+
+  toggleView(onlyFav: boolean): void {
+    this.onlyFavorites = !onlyFav;
+    this.fetchContactList(this.onlyFavorites);
   }
 }

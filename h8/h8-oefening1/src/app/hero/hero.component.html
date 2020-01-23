@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <h2>{{ hero.name }}</h2>
+    <div class="stars">
+        <span *ngFor="let i of hero.difficulty | fill">&#9733;</span>
+    </div>
+    <p>{{ hero.classType }}</p>
+
+    <div>
+        <img class="avatar" [src]="hero.avatar" />
+        <div class="abilities">
+            <h4>Abilities</h4>
+            <ul>
+                <li *ngFor="let ability of hero.abilities">{{ ability }}</li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -1,28 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pokemon } from './models/pokemon.model';
+import { PokemonService } from './services/pokemon.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'h45-oefening4';
   selectedPokemon: Pokemon;
+  pokemons: Pokemon[];
 
-  pokemons: Pokemon[] = [
-    { id: 1, name: "Bulbasaur", type: "grass", icon: "assets/bulbasaur.png", isSelected: false },
-    { id: 2, name: "Ivysaur", type: "grass", icon: "assets/ivysaur.png", isSelected: false },
-    { id: 3, name: "Venusaur", type: "grass", icon: "assets/venusaur.png", isSelected: false },
-    { id: 4, name: "Charmander", type: "fire", icon: "assets/charmander.png", isSelected: false },
-    { id: 5, name: "Charmeleon", type: "fire", icon: "assets/charmeleon.png", isSelected: false },
-    { id: 6, name: "Charizard", type: "fire", icon: "assets/charizard.png", isSelected: false },
-    { id: 7, name: "Squirtle", type: "water", icon: "assets/squirtle.png", isSelected: false },
-    { id: 8, name: "Wartortle", type: "water", icon: "assets/wartortle.png", isSelected: false },
-    { id: 9, name: "Blastoise", type: "water", icon: "assets/blastoise.png", isSelected: false }
-  ];
+  constructor(private service: PokemonService) {}
 
-  pokemonChanged(event: Pokemon) {
+  ngOnInit(): void {
+    this.refreshPokemons();
+  }
+
+  pokemonChanged(event: Pokemon): void {
     this.selectedPokemon = event;
+    this.refreshPokemons();
+  }
+  
+  refreshPokemons(): void {
+    this.pokemons = this.service.getAll();
+  }
+
+  pokemonsUpdated(): void {
+    this.refreshPokemons();
   }
 }

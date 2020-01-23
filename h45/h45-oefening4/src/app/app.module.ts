@@ -3,16 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemonService } from './services/pokemon.service';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonComponent
+    PokemonComponent,
+    PokemonFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
