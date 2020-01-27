@@ -1,0 +1,10 @@
+<h2>Create Event</h2>
+<form [formGroup]="form">
+    <input type="text" placeholder="Fill in title" formControlName="title">
+    <p class="error" *ngIf="form.get('title').hasError('required')">Title is required</p>
+    <input type="date" placeholder="Choose date" formControlName="date">
+    <p class="error" *ngIf="form.get('date').hasError('required')">Date is required</p>
+    <input type="text" placeholder="Fill in address" formControlName="address">
+    <p class="error" *ngIf="form.get('address').hasError('required')">Address is required</p>
+    <input type="submit" value="Create" (click)="onSubmit()" [disabled]="form.invalid">
+</form>

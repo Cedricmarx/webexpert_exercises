@@ -1,13 +1,5 @@
-.avatar {
-    float: left;
-    margin-right: 2rem;
-    width: 50px;
-}
-
-.error {
-    color: red;
-}
-
-.favorite {
-    color: red;
+:host.isLink:hover {
+	background: #27ae60;
+	color: #fff;
+	cursor: pointer;
 }

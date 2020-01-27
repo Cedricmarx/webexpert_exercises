@@ -8,5 +8,6 @@
         <li>Phone: {{ contact.phone }}</li>
     </ul>
 </div>
-<input type="checkbox" name="isFavorite" id="favorite" [(ngModel)]="contact.isFavorite" (click)="toggleFavorite(contact.id, contact.isFavorite)">
+<input type="checkbox" name="isFavorite" id="isFavorite" [(ngModel)]="contact.isFavorite" 
+            (click)="toggleFavorite($event, contact.id, contact.isFavorite)">
 <label for="isFavorite" [ngClass]="{'favorite': contact.isFavorite}">Favorite</label><br>

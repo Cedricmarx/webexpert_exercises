@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
   email: string;
   phone: string;
   isFavorite: boolean = false;
-  
+
   @Input() contact: Contact;
   @Input() index: number;
   @Output() onUpdate: EventEmitter<any> = new EventEmitter();
@@ -26,7 +26,8 @@ export class ContactComponent implements OnInit {
     this.isFavorite = false;
   }
 
-  toggleFavorite(id: string, isFavorite: boolean): void {
-    this.contactService.updateContact(id, {isFavorite: isFavorite}).subscribe(() => this.onUpdate.emit());
+  toggleFavorite(event: any, id: string, isFavorite: boolean): void {
+    event.stopPropagation();
+    this.contactService.updateContact(id, { isFavorite: !isFavorite }).subscribe(() => this.onUpdate.emit);
   }
 }

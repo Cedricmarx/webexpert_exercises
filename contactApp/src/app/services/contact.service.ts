@@ -32,6 +32,18 @@ export class ContactService {
     return this.httpClient.patch(url, data);
   }
 
+  getContact(id: string) {
+    let url = `${CONTACTAPIURL}${id}.json`;
+    return this.httpClient.get(url).pipe(
+      map(data => new Contact(data['name'], data['email'], data['phone'], data['isFavorite'], data['avatar'], id))
+    );
+  }
+
+  deleteContact(id: string) {
+    let url = `${CONTACTAPIURL}${id}.json`;
+    return this.httpClient.delete(url);
+  }
+
   parseContactData(rawContacts: any[]): Contact[] {
     return Object.keys(rawContacts).map(key => {
       let contact = rawContacts[key];

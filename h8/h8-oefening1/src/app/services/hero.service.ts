@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const BASEAPIURL = 'https://overwatch-9dba4.firebaseio.com/heroes.json';
+const BASEAPIURL = 'api/heroes';
 
 @Injectable({
   providedIn: 'root'
