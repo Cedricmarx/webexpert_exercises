@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { Car } from '../models/car.model';
+import { Car } from '../../models/car.model';
 import { ActivatedRoute } from '@angular/router';
-import { CarService } from '../services/car.service';
+import { CarService } from '../../services/car.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { BankAccountService } from '../services/bank-account.service';
+import { BankAccountService } from '../../services/bank-account.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

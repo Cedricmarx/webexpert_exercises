@@ -28,7 +28,7 @@ export class CarService {
   delete(id: string): Observable<any> {
     return this.http.delete(`${BASEAPIURL}/${id}`);
   }
-  
+
   addCar(car: Car): Observable<Car> {
     return this.http.post<Car>(`${BASEAPIURL}`, car);
   }

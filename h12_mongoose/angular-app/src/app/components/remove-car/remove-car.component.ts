@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Car } from '../models/car.model';
-import { CarService } from '../services/car.service';
+import { Car } from '../../models/car.model';
+import { CarService } from '../../services/car.service';
 import { delay } from 'rxjs/operators';
 
 @Component({
