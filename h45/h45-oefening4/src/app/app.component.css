@@ -1,0 +1,12 @@
+#container {
+    padding: 0;
+    margin: 20px;
+    width: 100vw;
+    height: 60vh;
+}
+
+#pokedex {
+    width: 80%;
+    margin: 0 auto;
+    background: lightyellow;
+}

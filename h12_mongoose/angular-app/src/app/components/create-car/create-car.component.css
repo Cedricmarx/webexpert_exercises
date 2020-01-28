@@ -1,0 +1,8 @@
+.error {
+    color: red;
+}
+
+input {
+    display: block;
+    margin: 1em 0;
+}

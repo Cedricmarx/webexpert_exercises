@@ -1,0 +1,6 @@
+<a [routerLink]="[ '/home' ]">Home</a>
+<a [routerLink]="[ '/info' ]">Info</a>
+<a [routerLink]="[ '/number', number ]">Numbers</a>
+<input type="number" [(ngModel)]="number">
+
+<router-outlet></router-outlet>

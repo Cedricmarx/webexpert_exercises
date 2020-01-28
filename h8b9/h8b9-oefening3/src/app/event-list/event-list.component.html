@@ -1,0 +1,20 @@
+<h2>Event List</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Address</th>    
+        <th></th>
+    </tr>
+    <tr *ngFor="let event of events">
+        <td (click)="navigateToEventDetail(event.id)">{{ event.id }}</td>
+        <td (click)="navigateToEventDetail(event.id)">{{ event.title }}</td>
+        <td (click)="navigateToEventDetail(event.id)">{{ event.date | date }}</td>
+        <td (click)="navigateToEventDetail(event.id)">{{ event.address }}</td>
+        <td><button (click)="removeEvent(event.id)">Delete</button></td>
+    </tr>
+</table>
+<div *ngFor="let event of events">
+    
+</div>

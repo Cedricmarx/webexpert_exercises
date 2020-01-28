@@ -1,0 +1,50 @@
+table {
+    margin: 0 auto;
+    border: 1px solid #000000;
+    width: 60%;
+    border-collapse: collapse; 
+}
+
+table tr {
+    width: 100%;
+}
+
+table th {
+    padding: 10px;
+    text-align: left;
+    border-right: #000000 1px solid;
+}
+
+table td {
+    padding: 10px;
+    border-right: #000000 1px solid;
+}
+
+.heading-row {
+    border-bottom: 1px solid green;
+}
+
+.item-row {
+    border-bottom: 1px solid #000000;
+}
+
+.item-row:hover {
+    background: lightblue;
+    cursor: pointer;
+}
+
+.even {
+    background: lightcoral;
+}
+
+.odd {
+    background: lightgreen;
+}
+
+table img {
+    height: 100px;
+}
+
+.background-white {
+    background: #ffffff;
+}

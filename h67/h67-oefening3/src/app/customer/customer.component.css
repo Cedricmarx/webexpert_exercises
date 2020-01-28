@@ -1,0 +1,18 @@
+h2 {
+    color: green;
+    float: left;
+}
+
+h4 {
+    clear: both;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    padding: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+hr {
+    margin: 1rem 0;
+}

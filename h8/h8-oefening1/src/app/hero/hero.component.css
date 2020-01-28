@@ -1,0 +1,61 @@
+:host {
+    display: block;
+    background: #07383C;
+    margin: 1rem;
+    width: calc(33.33% - 2rem);
+    float: left;
+}
+
+.wrapper {
+    padding: 0.5rem;
+}
+
+h2 {
+    display: inline;
+    color: #ffffff;
+}
+
+.stars {
+    clear: right;
+    display: inline;
+    margin-left: 0.5rem;
+}
+
+.stars > span {
+    color: #F9D305;
+    font-size: 1.5em;
+}
+
+p {
+    color: #ffffff;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.avatar {
+    height: 10rem;
+    display: block;
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.abilities {
+    display: block;
+}
+
+.abilities > ul > li {
+    list-style: none;
+    margin-bottom: 0.25rem;
+}
+
+.abilities > h4, li {
+    color: #ffffff;
+}
+
+.abilities > h4 {
+    margin-bottom: 0.5rem;
+}
+
+.clearfix {
+    clear: both;
+}

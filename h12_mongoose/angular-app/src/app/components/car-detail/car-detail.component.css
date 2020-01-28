@@ -1,0 +1,19 @@
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+}
+
+label {
+    width: 100px;
+}
+
+input {
+    display: block;
+}
+
+.error {
+    color: red;
+}

@@ -1,0 +1,11 @@
+<h1>Huisdieren</h1>
+
+<div *ngFor="let pet of pets; index as i">
+  <label for="delete">
+    <input name="delete" type="button" value="del" (click)="deletePet(i)" />
+  </label>
+  <label>{{ pet }}</label>
+</div>
+
+<input type="text" [(ngModel)]="petToAdd" />
+<input type="submit" value="toevoegen" (click)="addPet()" />

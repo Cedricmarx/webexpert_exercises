@@ -1,0 +1,17 @@
+<div>
+    <form [formGroup]="form">
+        <label for="name">Name:</label>
+        <input name="name" formControlName="name"><br />
+        <p *ngIf="form.get('name').hasError('minlength')" class="error">Minimum 3 characters</p>
+        <p *ngIf="form.get('name').hasError('maxlength')" class="error">Maximum 25 characters</p>
+        <p *ngIf="form.get('name').hasError('required')" class="error">Name is required</p>
+        <label for="type">Type:</label>
+        <select name="type" formControlName="type">
+            <option *ngFor="let pokemonType of pokemonTypes">{{ pokemonType }}</option>
+        </select><br />
+        <label for="icon">Icon URL:</label>
+        <input name="icon" formControlName="icon"><br />
+        <p *ngIf="form.get('icon').hasError('required')" class="error">Icon URL is required</p>
+        <input type="submit" value="Submit" (click)="handleForm(form)" [disabled]="form.invalid">
+    </form>
+</div>

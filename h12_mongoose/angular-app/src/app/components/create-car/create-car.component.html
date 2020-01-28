@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <input type="text" formControlName="manufacturer" placeholder="Fill in manufacturer">
+    <p class="error" *ngIf="form.get('manufacturer').hasError('required')">Manufacturer is required</p>
+    <input type="text" formControlName="model" placeholder="Fill in model">
+    <p class="error" *ngIf="form.get('model').hasError('required')">Model is required</p>
+    <input type="text" formControlName="price" placeholder="Fill in price">
+    <p class="error" *ngIf="form.get('price').hasError('required')">Price is required</p>
+    <input type="text" formControlName="wiki" placeholder="Fill in wiki">
+    <p class="error" *ngIf="form.get('wiki').hasError('required')">Wiki is required</p>
+    <input type="submit" [disabled]="form.invalid" value="Submit" (click)="submitForm()">
+</form>

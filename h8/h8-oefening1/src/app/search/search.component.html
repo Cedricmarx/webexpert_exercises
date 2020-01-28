@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <h3>Filter heroes</h3>
+    <label for="name">Name:</label>
+    <input type="text" placeholder="Filter name" [(ngModel)]="name" (keyup)="onKeyUp()">
+    <label for="rating">Rating:</label>
+    <select name="rating" [(ngModel)]="rating" (change)="onChange()">
+        <option>All</option>
+        <option *ngFor="let number of [1,2,3]">{{ number }}</option>
+    </select>
+</div>

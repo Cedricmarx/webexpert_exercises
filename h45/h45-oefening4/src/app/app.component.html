@@ -1,0 +1,10 @@
+<div id="container">
+    <div id="pokedex">
+        <h1>Pokédex</h1>
+        <h2 [hidden]="selectedPokemon == null">Geselecteerde pokemon: {{ selectedPokemon?.name }}</h2>
+        <div *ngFor="let pokemon of pokemons">
+            <app-pokemon [pokemon]="pokemon" [pokemons]="pokemons" (pokemonSelectionChanged)="pokemonChanged($event)"></app-pokemon>
+        </div>
+        <app-pokemon-form (onUpdatePokemons)="pokemonsUpdated()"></app-pokemon-form>    
+    </div>
+</div>

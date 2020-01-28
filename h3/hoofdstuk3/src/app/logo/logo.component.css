@@ -1,0 +1,10 @@
+div {
+    width: calc(100vw - (2 * 10px));
+    margin: 10px;
+    height: 140px;
+    background: green;
+}
+
+img {
+    height: 100%;
+}

@@ -1,0 +1,5 @@
+<button (click)="toggleVisibility()">Display details</button>
+<p [hidden]="visible === false">When you click the button my visibility will be toggled.</p>
+<div *ngFor="let date of dates">
+  <p>{{ date }}</p>
+</div>

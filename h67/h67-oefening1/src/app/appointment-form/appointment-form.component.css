@@ -1,0 +1,33 @@
+h1 {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+form > label {
+    width: 7.5rem;
+    display: inline-block;
+    margin: 0.5rem;
+    text-align: left;
+}
+
+#submit {
+    margin: 0.5rem;
+}
+
+form > input[type="text"], input[type="date"], select {
+    width: 10rem;
+}
+
+form > label[for="r1"], label[for="r2"], label[for="morning"], label[for="afternoon"] {
+    display: inline;
+}
+
+.error {
+    color: red;
+}

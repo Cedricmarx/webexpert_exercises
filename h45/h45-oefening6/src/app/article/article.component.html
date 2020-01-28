@@ -1,0 +1,18 @@
+<table>
+    <tr class="heading-row">
+        <th>Artikelfoto</th>
+        <th>Artikelnummer</th>
+        <th>Artikelnaam</th>
+        <th>Aankoopprijs</th>
+        <th>Verkoopprijs</th>
+        <th>Info</th>
+    </tr>
+    <tr *ngFor="let article of articles; index as i" class="item-row" [ngClass]="{'even': (i + 1) % 2 === 0, 'odd': (i + 1) % 2 !== 0 }" (click)="articleClick(article)">
+        <td class="background-white"><img [src]="article.imageUrl"/></td>
+        <td>{{ article.id }}</td>
+        <td>{{ article.name }}</td>
+        <td>{{ article.purchasePrice }}</td>
+        <td>{{ article.sellPrice }}</td>
+        <td><a [href]="article.hyperLink">Link</a></td>
+    </tr>
+</table>

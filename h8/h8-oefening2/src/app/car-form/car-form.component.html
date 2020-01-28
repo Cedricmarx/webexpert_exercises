@@ -1,0 +1,19 @@
+<h2>Voeg toe</h2>
+
+<form [formGroup]="form">
+    <input type="text" placeholder="merk" formControlName="merk">
+    <p class="error" *ngIf="form.get('merk').hasError('required')">Merknaam is verplicht</p>
+    <input type="text" placeholder="type" formControlName="type">
+    <p class="error" *ngIf="form.get('type').hasError('required')">Type is verplicht</p>
+    <input type="text" placeholder="bouwjaar" formControlName="bouwjaar">
+    <p class="error" *ngIf="form.get('bouwjaar').hasError('validateNumber')">Bouwjaar moet een getal zijn</p>
+    <p class="error" *ngIf="form.get('bouwjaar').hasError('validateConstructionYear')">Bouwjaar moet een getal onder 2018 zijn</p> 
+    <p class="error" *ngIf="form.get('bouwjaar').hasError('required')">Bouwjaar is verplicht</p>
+    <input type="text" placeholder="prijs" formControlName="prijs">
+    <p class="error" *ngIf="form.get('prijs').hasError('validateNumber')">Prijs moet een getal zijn</p>
+    <p class="error" *ngIf="form.get('prijs').hasError('required')">Prijs is verplicht</p>
+    <input type="text" placeholder="stock" formControlName="stock">
+    <p class="error" *ngIf="form.get('stock').hasError('validateNumber')">Stock moet een getal zijn</p>
+    <p class="error" *ngIf="form.get('stock').hasError('required')">Stock is verplicht</p>
+    <input type="submit" value="Voeg toe" (click)="handleForm()" [disabled]="form.invalid">
+</form>
