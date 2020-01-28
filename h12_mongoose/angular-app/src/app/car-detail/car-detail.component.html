@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+    <ul>
+        <li>Id: {{ car.id }}
+            <br />
+        </li>
+        <li>
+            <label>Manufacturer:</label>
+            <input type="text" formControlName="manufacturer">
+            <p class="error" *ngIf="form.get('manufacturer').hasError('required')">Manufacturer is required</p>
+        </li>
+        <li>
+            <label>Model:</label>
+            <input type="text" formControlName="model">
+            <p class="error" *ngIf="form.get('model').hasError('required')">Model is required</p>
+        </li>
+        <li>
+            <label>Price:</label>
+            <input type="text" formControlName="price">
+            <p class="error" *ngIf="form.get('price').hasError('required')">Price is required</p>
+        </li>
+        <li>
+            <label>Wiki:</label>
+            <input type="text" formControlName="wiki">
+            <p class="error" *ngIf="form.get('wiki').hasError('required')">Wiki is required</p>
+        </li>
+        <input type="submit" value="Update" [disabled]="form.invalid" (click)="submitForm()"><br/>
+        <button (click)="buyCar()">Buy</button>
+    </ul>
+</form>

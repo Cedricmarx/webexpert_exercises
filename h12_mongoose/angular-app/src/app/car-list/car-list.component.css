@@ -1,0 +1,4 @@
+table > tr > td,th {
+    width: 200px;
+    text-align: left;
+}

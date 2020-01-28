@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Manufacturer</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Wiki</th>
+    </tr>
+    <tr *ngFor="let car of cars">
+        <td (click)="clickCar(car.id)">{{ car.id }}</td>
+        <td (click)="clickCar(car.id)">{{ car.manufacturer }}</td>
+        <td (click)="clickCar(car.id)">{{ car.model }}</td>
+        <td (click)="clickCar(car.id)">{{ car.price }}</td>
+        <td><a href="{{ car.wiki }}" target="_blank">Link</a></td>
+        <td><button (click)="deleteCar(car.id)">Delete</button></td>
+    </tr>
+</table>
