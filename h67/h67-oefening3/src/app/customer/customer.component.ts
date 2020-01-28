@@ -9,7 +9,7 @@ import { CustomerService } from '../services/customer.service';
 })
 export class CustomerComponent implements OnInit {
   @Input() customer: Customer;
-  
+
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {}

@@ -23,6 +23,6 @@ form > input[type="submit"] {
     padding: 0.5rem;
 }
 
-.ng-invalid > input[type="text"] {  
+input[type="text"].ng-invalid {
     border: 1px solid red;
 }
